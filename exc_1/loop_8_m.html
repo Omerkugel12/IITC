@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //loop_5_m with "do while loop"
+      let mult = 1;
+      let num = prompt("Enter a number kgolmgt: ");
+      let i = 1;
+      do {
+        mult *= i;
+        i++;
+      } while (i <= num);
+      console.log(mult);
+
+      //loop_6_m with "do while loop"
+      let num_1 = prompt("Enter a number");
+      let max = 0;
+      let min = num_1;
+      let j = 1;
+      do {
+        num_1 = prompt("Enter a number");
+        if (num_1 > max) {
+          max = num_1;
+        }
+        if (num_1 < min) {
+          min = max;
+        }
+        j++;
+      } while (j <= 4);
+      console.log("This is the max value number: ", max);
+      console.log("This is the min value number: ", min);
+    </script>
+  </body>
+</html>

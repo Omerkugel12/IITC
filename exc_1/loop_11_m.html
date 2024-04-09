@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let numOfGuesses = 0;
+      let random_num = Math.floor(Math.random() * 99) + 1;
+      let guess_num = prompt("Guess a number between 1-99: ");
+      while (guess_num != random_num) {
+        guess_num = prompt("Guess a number between 1-99: ");
+        if (guess_num > random_num) {
+          alert("Your guess is bigger than the wanted number, try again!");
+        } else if (guess_num < random_num) {
+          alert("Your guess is smaller than the wanted number, try again!");
+        } else {
+          alert("Good job!,You guessed the right number");
+        }
+        numOfGuesses++;
+      }
+      console.log("Number of guesses: ", numOfGuesses);
+    </script>
+  </body>
+</html>

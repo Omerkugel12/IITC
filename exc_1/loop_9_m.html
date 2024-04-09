@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num = prompt("Enter a number: ");
+      let max_num = Number(num);
+      let min_num = Number(num);
+      while (num > 0) {
+        if (num > max_num) {
+          max_num = num;
+        }
+        if (num < min_num) {
+          min_num = num;
+        }
+        console.log(num);
+        num = prompt("Enter a number: ");
+      }
+      console.log("This the maximum number: ", max_num);
+      console.log("This the minimum number: ", min_num);
+    </script>
+  </body>
+</html>
