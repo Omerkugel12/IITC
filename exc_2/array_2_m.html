@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //let random_num1 = Math.floor(Math.random() * 100);
+      //let random_num2 = Math.floor(Math.random() * 100);
+      //let random_num3 = Math.floor(Math.random() * 100);
+      //let random_num4 = Math.floor(Math.random() * 100);
+      //let random_num5 = Math.floor(Math.random() * 100);
+      //let array = [
+      //  random_num1,
+      //  random_num2,
+      //  random_num3,
+      //  random_num4,
+      //  random_num5,
+      //];
+      //let sum = 0;
+      //for (let i of array) {
+      //  sum += array[i];
+      //}
+      //let avg
+      //for (let i = 0; i < 5; i++) {
+      //  array.push(random_num);
+      //}
+      //console.log(array);
+
+      let numbers = [];
+      let sum = 0;
+      for (let i = 0; i < 5; i++) {
+        let randomNumber = Math.floor(Math.random() * 100);
+        numbers.push(randomNumber);
+      }
+      for (let j = 0; j < 5; j++) {
+        sum += numbers[j];
+      }
+      let avg = sum / 5;
+      console.log("array; ", numbers);
+      console.log("sum: ", sum);
+      console.log("avrage: ", avg);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num1 = 5;
+      let num2 = 10;
+      function switch_values(num_1, num_2) {
+        let num_3 = num_1;
+        num_1 = num_2;
+        num_2 = num_3;
+        return [num_1, num_2];
+      }
+      console.log(switch_values(num1, num2));
+    </script>
+  </body>
+</html>
