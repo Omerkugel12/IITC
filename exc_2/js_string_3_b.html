@@ -7,20 +7,19 @@
   </head>
   <body>
     <script>
-      let arr_str = "1234:567789,4567:1231249,abcd:asdnca,efgh:kfma";
-      function keyValue(arr) {
+      let str = "Name:Omer,id:322848714,age:23";
+      function max_value(string) {
+        let array = string.split(",");
         let max_length = 0;
-        let split_arr1 = arr.split(",");
-        for (let pair of split_arr1) {
+        for (let pair of array) {
           let [key, value] = pair.split(":");
           if (value.length > max_length) {
             max_length = value.length;
           }
         }
-
         return max_length;
       }
-      console.log(keyValue(arr_str));
+      console.log(max_value(str));
     </script>
   </body>
 </html>

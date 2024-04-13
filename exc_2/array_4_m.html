@@ -7,26 +7,45 @@
   </head>
   <body>
     <script>
-      let arr = [1, 2, 3, 4, 5, 4, 2, 3, 1, 4, 5, 4, 3, 7];
-      function arr_no_repeat(arr) {
-        let empt_arr = [];
-        let sum = 0;
-        for (let i of arr) {
-          let found = false;
-          for (let j of empt_arr) {
-            if (i === j) {
-              found = true;
-              break;
+      //let arr = [1, 2, 3, 4, 5, 4, 2, 3, 1, 4, 5, 4, 3, 7];
+      //function arr_no_repeat(arr) {
+      //  let empt_arr = [];
+      //  let sum = 0;
+      //  for (let i of arr) {
+      //    let found = false;
+      //    for (let j of empt_arr) {
+      //      if (i === j) {
+      //        found = true;
+      //        break;
+      //      }
+      //    }
+      //    if (!found) {
+      //      empt_arr.push(i);
+      //      sum++;
+      //    }
+      //  }
+      //  return sum;
+      //}
+      //console.log(arr_no_repeat(arr));
+
+      let array1 = [1, 2, 3, 2, 5];
+      function unique_num(array) {
+        let uniquCounter = 0;
+        for (let i of array) {
+          let num = array[i];
+          let count = 0;
+          for (let j of array) {
+            if (array[j] === num) {
+              count++;
             }
           }
-          if (!found) {
-            empt_arr.push(i);
-            sum++;
+          if (count == 1) {
+            uniquCounter++;
           }
         }
-        return sum;
+        return uniquCounter;
       }
-      console.log(arr_no_repeat(arr));
+      console.log(unique_num(array1));
     </script>
   </body>
 </html>
