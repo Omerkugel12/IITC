@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const books = [
+        { name: "book1", pages: 120 },
+        { name: "book2", pages: 120 },
+        { name: "book3", pages: 90 },
+        { name: "book4", pages: 310 },
+        { name: "book5", pages: 210 },
+      ];
+
+      function updateBookPages(array, BookName, BookPages) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i].name === BookName) {
+            array[i].pages = BookPages;
+          } else {
+            console.log(null);
+          }
+        }
+      }
+
+      let updatePages = updateBookPages(books, "book8", 3000);
+      console.log(books);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const books = [
+        { name: "book1", pages: 120 },
+        { name: "book2", pages: 120 },
+        { name: "book3", pages: 90 },
+        { name: "book4", pages: 310 },
+        { name: "book5", pages: 210 },
+      ];
+      function getBook(array, BookName) {
+        for (let book = 0; book < array.length; book++) {
+          if (array[book].name === BookName) {
+            return array[book];
+          }
+        }
+        return null;
+      }
+
+      let findBook = getBook(books, "book7");
+      let findBook1 = getBook(books, "book3");
+      let findBook2 = getBook(books, "book4");
+      console.log(findBook);
+      console.log(findBook1);
+      console.log(findBook2);
+    </script>
+  </body>
+</html>

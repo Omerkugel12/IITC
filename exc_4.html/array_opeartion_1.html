@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const books = [
+        { name: "book1", pages: 120 },
+        { name: "book2", pages: 120 },
+        { name: "book3", pages: 90 },
+        { name: "book4", pages: 310 },
+        { name: "book5", pages: 210 },
+      ];
+
+      function addBook(array, BookName, BookPages) {
+        books.push({ name: BookName, pages: BookPages });
+      }
+
+      let NewBook = addBook(books, "book6", 133);
+      console.log(books);
+    </script>
+  </body>
+</html>

@@ -12,6 +12,17 @@
         return board1
     }
     
+    function check_valid_size(str){
+        while(true){
+           let size1 = Number(prompt(str))
+           
+           if(Number.isInteger(size1)){
+            return size1
+           }
+           
+        }
+    }
+
     function turn(){
         let rowNum
         let colNum
@@ -112,16 +123,7 @@ function isWinByRowIndex(iRowIndex){
 }
 return false
 }
-function check_valid_size(str){
-    while(true){
-       let size1 = Number(prompt(str))
-       
-       if(Number.isInteger(size1)){
-        return size1
-       }
-       
-    }
-}
+
 isTie=false
 let sign = 'X'
 let [playerX,playerO]=names()

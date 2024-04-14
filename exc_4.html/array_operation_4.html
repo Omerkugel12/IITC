@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const books = [
+        { name: "book1", pages: 120 },
+        { name: "book2", pages: 120 },
+        { name: "book3", pages: 90 },
+        { name: "book4", pages: 310 },
+        { name: "book5", pages: 210 },
+      ];
+
+      function deleteBook(array, BookName) {
+        for (let i = 0; i < array.length; i++) {
+          if (array[i].name === BookName) {
+            array.splice(i, 1);
+            return true;
+          }
+        }
+        return false;
+      }
+
+      let deleteOneBook = deleteBook(books, "book3");
+      let deleteOneBook1 = deleteBook(books, "book7");
+      let deleteOneBook2 = deleteBook(books, "book2");
+      console.log(books);
+      console.log(books);
+      console.log(books);
+    </script>
+  </body>
+</html>
