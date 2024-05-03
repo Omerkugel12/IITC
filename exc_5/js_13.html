@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="calculator">
+      <div id="inputWrapper">
+        <div id="input">
+          <button onclick="clearDisplay()" class="Cbutton">C</button>
+          <input id="display" readonly />
+        </div>
+      </div>
+      <div id="keys">
+        <button onclick="appendToDisplay(7)" class="digit">7</button>
+        <button onclick="appendToDisplay(8)" class="digit">8</button>
+        <button onclick="appendToDisplay(9)" class="digit">9</button>
+
+        <button onclick="appendToDisplay(4)" class="digit">4</button>
+        <button onclick="appendToDisplay(5)" class="digit">5</button>
+        <button onclick="appendToDisplay(6)" class="digit">6</button>
+
+        <button onclick="appendToDisplay(1)" class="digit">1</button>
+        <button onclick="appendToDisplay(2)" class="digit">2</button>
+        <button onclick="appendToDisplay(3)" class="digit">3</button>
+
+        <button onclick="appendToDisplay(0)" class="digit">0</button>
+        <button onclick="appendToDisplay('.')" class="digit">.</button>
+        <button onclick="calculate()" class="operator">=</button>
+
+        <button onclick="actionPressed('+')" class="operator">+</button>
+        <button onclick="actionPressed('-')" class="operator">-</button>
+        <button onclick="actionPressed('*')" class="operator">*</button>
+        <button onclick="actionPressed('/')" class="operator">/</button>
+      </div>
+    </div>
+    <script>
+      let action;
+      let result = 0;
+      const elemDisplay = document.querySelector("#display");
+      console.log(elemDisplay.value);
+
+      function appendToDisplay(digit) {
+        if (action === null) {
+          elemDisplay.value += digit;
+        } else {
+          elemDisplay.value = null;
+          elemDisplay.value += digit;
+        }
+      }
+
+      const num1 = elemDisplay.value;
+      function actionPressed(key) {
+        num1 = elemDisplay.value;
+        action = key;
+        elemDisplay.value = "";
+      }
+
+      function calculate() {
+        numArray.push(parseInt(elemDisplay.value));
+        //elemDisplay.value = eval(elemDisplay.value);
+        console.log(numArray);
+        if (numArray.length < 2) {
+          return;
+          console.log();
+        }
+
+        //result = parseInt(numArray[0]) + action + parseInt(numArray[1]);
+        console.log(action);
+        switch (action) {
+          case "+":
+            result = numArray[0] + numArray[1];
+        }
+        elemDisplay.value = result;
+        console.log(result);
+      }
+
+      function clearDisplay() {
+        elemDisplay.value = null;
+        numArray = [];
+        result = 0;
+        action = null;
+      }
+    </script>
+  </body>
+</html>

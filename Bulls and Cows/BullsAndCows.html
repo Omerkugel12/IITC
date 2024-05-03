@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bulls and Cows</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1>BULLS AND COWS</h1>
+    <div id="name">
+      <label for="">Enter your name</label>
+      <input type="text" id="inputName" />
+      <button onclick="showPlayerName()">Submit</button>
+    </div>
+    <div id="random">
+      <div class="randomCard">?</div>
+      <div class="randomCard">?</div>
+      <div class="randomCard">?</div>
+      <div class="randomCard">?</div>
+    </div>
+    <div id="user">
+      <input type="number" />
+      <input type="number" />
+      <input type="number" />
+      <input type="number" />
+    </div>
+    <button onclick="checkValid()">Go</button>
+    <div id="state"></div>
+    <button onclick="newGame()">Start a new game</button>
+    <script>
+      const elemInputName = document.querySelector("#inputName");
+      function showPlayerName() {
+        const elemInputNameValue = elemInputName.value;
+        elemInputName.value = "";
+        let elemName = document.querySelector("#name");
+        elemName.innerHTML = `<h3>current player: ${elemInputNameValue}</h3>`;
+      }
+
+      let randomArray = [];
+      function makeRandomArray() {
+        for (let i = 0; i < 4; i++) {
+          while (true) {
+            let newNum = Math.floor(Math.random() * 9 + 1);
+            if (!randomArray.includes(newNum)) {
+              randomArray[i] = newNum;
+              break;
+            }
+          }
+        }
+        console.log(randomArray);
+      }
+
+      let bulls = 0;
+      let cows = 0;
+      const elemUser = document.querySelector("#user");
+      const elemRandomCards = document.querySelectorAll(".randomCard");
+      let elemState = document.querySelector("#state");
+      function checkValid() {
+        bulls = 0;
+        cows = 0;
+        for (let i = 0; i < 4; i++) {
+          //console.dir(elemUser.children[i]);
+          if (elemUser.children[i].value == randomArray[i]) {
+            bulls++;
+          }
+          if (randomArray.includes(Number(elemUser.children[i].value))) {
+            cows++;
+          }
+        }
+        elemState.innerHTML += `<p> guess :${elemUser.children[0].value},${
+          elemUser.children[1].value
+        },${elemUser.children[2].value},${
+          elemUser.children[3].value
+        } bulls:${bulls} cows:${cows - bulls} </p>`;
+        if (bulls === 4) {
+          alert("correct");
+          for (let j = 0; j < 4; j++) {
+            elemRandomCards[j].innerHTML = randomArray[j];
+          }
+        }
+      }
+      makeRandomArray();
+      function newGame() {
+        makeRandomArray();
+        for (let i = 0; i < 4; i++) {
+          elemUser.children[i].value = "";
+        }
+        elemState.innerHTML = ``;
+      }
+    </script>
+  </body>
+</html>
