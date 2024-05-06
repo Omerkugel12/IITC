@@ -11,8 +11,7 @@ const elemDiv = document.querySelector('#id1')
 
 //function to add the user's input to the array
 function addToList(){
-
-    todos.push(userInput.value)
+    todos.push({input:userInput.value,status:true})
     saveToLocalStorage()
     userInput.value = ''
 }
@@ -23,11 +22,11 @@ function saveToLocalStorage(){
    localStorage.setItem('ToDoList', todosAsJson)
 }
 
-//function to show my todo list
+//function to show my todo list on the DOM
 function showList(){
     elemDiv.innerHTML = ''
     for(let i = 0;i<todos.length;i++){
-        elemDiv.innerHTML += `<li onclick="done(this)">${todos[i]}</li>`
+        elemDiv.innerHTML += `<li onclick="done(this)">${todos[i].input}</li>`
     }
 }
 
@@ -46,8 +45,11 @@ function showList(){
 
 //option 2
 function done(elem){
-    elem.classList.toggle('green')
-}
+    elem.classList.toggle('green')   
+        todos[elem].status = false
+        saveToLocalStorage()
+    }
+
 
 
 //function to delete items of the list(array) through the DOM
