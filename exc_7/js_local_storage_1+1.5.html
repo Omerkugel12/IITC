@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container">
+      <button onclick="increment1()">increment1</button>
+      <p id="id1"></p>
+      <button onclick="increment2()">increment2</button>
+      <p id="id2"></p>
+    </div>
+    <script>
+      //276
+      //button increment1
+      const elemP1 = document.querySelector("#id1");
+      let count1;
+      if (localStorage.getItem("count1") == null) {
+        count1 = 0;
+      } else {
+        count1 = localStorage.getItem("count1");
+      }
+      function increment1() {
+        count1++;
+        elemP1.innerText = count1;
+        localStorage.setItem("count1", count1);
+      }
+
+      //button increment2
+      const elemP2 = document.querySelector("#id2");
+      let count2;
+      if (localStorage.getItem("count2") == null) {
+        count2 = 0;
+      } else {
+        count2 = Number(localStorage.getItem("count2"));
+      }
+      function increment2() {
+        count2++;
+        elemP2.innerText = count2;
+        localStorage.setItem("count2", count2);
+      }
+    </script>
+  </body>
+</html>
