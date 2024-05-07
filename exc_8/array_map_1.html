@@ -12,12 +12,10 @@
       const olElem = document.createElement("ol");
       console.log(olElem);
       document.body.appendChild(olElem);
-      const elemOl = document.querySelector("ol");
-
       const newelem = names.map((name) => `<li>${name}</li>`);
       console.log(newelem);
 
-      elemOl.innerHTML += newelem.join("");
+      olElem.innerHTML += newelem.join("");
     </script>
   </body>
 </html>
