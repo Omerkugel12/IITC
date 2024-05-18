@@ -32,12 +32,9 @@ console.log(numbers);
 // function that get an array as argument and
 // show it on the document instead on the console
 function showSortedOnDom(arr){
-    const olElem = document.createElement('ol')
-    document.body.appendChild(olElem)
-    const elemol = document.querySelector('ol')
-    
-    // const inisideElemOl = arr.map(i => `<li>${i}</li>`)
-    elemol.innerHTML += `<li>${arr}</li>`
+    const ulElem = document.createElement('ul')
+    document.body.appendChild(ulElem)
+    ulElem.innerHTML += `<li>${arr}</li>`
 }
 
 // console.log(showSortedOnDom(numbers));

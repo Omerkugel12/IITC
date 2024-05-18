@@ -8,13 +8,27 @@
   <body>
     <script>
       const numbers = [1, 2, 3, 4, 5];
+      const numbers2 = [34532, 434, 545, 432312, , 3231, 21, 21, 2];
 
-      function calculate(array) {
-        const sum = array.reduce((total, num) => total + num, 0);
-        return sum;
+      //function calculate(array) {
+      //  const sum = array.reduce((total, num) => total + num);
+      //  return sum;
+      //}
+      //
+      //console.log(calculate(numbers));
+
+      //function (that gets an array as an argument) to find how many even numbers in the array
+      function checkEven(array) {
+        const initialValue = 0; //I tell the "total" variable in the 'reduce' function to start counting from 0 instead of the value of the first item in the array
+        const evens = array.reduce(
+          (total, num) => total + (num % 2 === 0 ? 1 : 0),
+          initialValue
+        );
+        return evens;
       }
 
-      console.log(calculate(numbers));
+      console.log(checkEven(numbers));
+      console.log(checkEven(numbers2));
     </script>
   </body>
 </html>
