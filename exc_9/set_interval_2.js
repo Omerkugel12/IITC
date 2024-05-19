@@ -27,30 +27,33 @@ function switchChars(array,i,j){
     array[j] = temp
 }
 
-// function sortArray(array){
-//     for(let i = 0;i<array.length;i++){
-//         let indexMin = computeMin(array,i)
-//         switchChars(array,i,indexMin)
-//         let liElem = document.createElement('li')
-//         liElem.textContent = array.join(',')
-//         setTimeout(function(){
-//             ulElem.appendChild(liElem)
-//         },i*1000)
-        
-//         }
-//     }   
-//     sortArray(numbers)
-
-btnSort.addEventListener('click',function(){
-    for(let i = 0;i<numbers.length;i++){
-        let indexMin = computeMin(numbers,i)
-        switchChars(numbers,i,indexMin)
+function sortArray(array){
+    for(let i = 0;i<array.length;i++){
+        let indexMin = computeMin(array,i)
+        switchChars(array,i,indexMin)
         let liElem = document.createElement('li')
-        liElem.textContent = numbers.join(',')
+        liElem.textContent = array.join(',')
         setTimeout(function(){
             ulElem.appendChild(liElem)
-        },i*1000)}
-})
+        },i*1000)
+        
+    }
+}   
+btnSort.addEventListener('click',()=>sortArray(numbers))
+
+// sortArray(numbers)
+
+// btnSort.addEventListener('click',function(){
+//     for(let i = 0;i<numbers.length;i++){
+//         let indexMin = computeMin(numbers,i)
+//         switchChars(numbers,i,indexMin)
+//         let liElem = document.createElement('li')
+//         liElem.textContent = numbers.join(',')
+//         setTimeout(function(){
+//             ulElem.appendChild(liElem)
+//         },i*1000)}
+// })
+
 
 
 
