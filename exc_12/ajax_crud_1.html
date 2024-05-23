@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table,
+    thead,
+    tr,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+  <body>
+    <button id="getAll">Get All Users</button>
+    <form id="addUser">
+      <label for="">Create New User</label>
+      <input type="text" id="addFirstName" placeholder="First Name" required />
+      <input type="text" id="addLastName" placeholder="Last Name" required />
+      <button>ADD USER</button>
+    </form>
+    <p id="addState"></p>
+    <form id="deleteUser">
+      <label for="">Dlete User</label>
+      <input
+        type="text"
+        placeholder="Add ID to delete"
+        id="delteUserInput"
+        required
+      />
+      <button>DELETE USER</button>
+    </form>
+    <p id="deleteState"></p>
+    <table>
+      <thead>
+        <td>ID</td>
+        <td>FIRST NAME</td>
+        <td>LAST NAME</td>
+      </thead>
+    </table>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="ajax_crud_1.js"></script>
+  </body>
+</html>
