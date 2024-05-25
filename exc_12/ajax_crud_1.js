@@ -37,12 +37,11 @@ addFormElem.addEventListener("submit", (e) => {
     .post(usersUrl, body)
     .then((response) => {
       console.log(response);
-      const elemPState = document.querySelector("#state");
       elemPAddState.innerText = "User was added succssesfuly";
     })
     .catch((error) => {
       console.log(error);
-      elemPState.innerText = "Failure";
+      elemPAddState.innerText = "Failure";
     });
 });
 
@@ -59,6 +58,30 @@ deleteFormElem.addEventListener("submit", (e) => {
     })
     .catch((error) => {
       console.log(error);
-      elemPState.innerText = "Failure";
+      elemPDeleteState.innerText = "Failure";
+    });
+});
+
+//Form roles to update user from json-server
+const updateformElem = document.querySelector("#updateUser");
+updateformElem.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const idInputElem = document.querySelector("#IdToUpdate").value;
+  const firstNameToUpdateInputElem =
+    document.querySelector("#firstNameToUpdate").value;
+  const lastNameToUpdateInputElem =
+    document.querySelector("#lastNameToUpdate").value;
+
+  const body = {
+    firstName: firstNameToUpdateInputElem,
+    lastName: lastNameToUpdateInputElem,
+  };
+  axios
+    .patch(`${usersUrl}/${idInputElem}`, body)
+    .then((response) => {
+      console.log(response);
+    })
+    .catch((error) => {
+      console.log(error);
     });
 });

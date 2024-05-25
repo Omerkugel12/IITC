@@ -20,11 +20,17 @@
             firstName: `user${i}`,
             lastName: `lastName${i}`,
           };
-          axios.post(usersUrl, user);
+          axios.post(usersUrl, user).then((response) => {
+            console.log(response);
+            console.log("success!").catch((error) => {
+              console.log(error);
+              console.log("failure!");
+            });
+          });
         }
       };
       const addUsersBtn = document.querySelector("#addUsers");
-      addUsersBtn.addEventListener("click", addUserObj());
+      addUsersBtn.addEventListener("click", addUserObj);
 
       const addBookObj = () => {
         for (let i = 0; i <= 500; i++) {
@@ -34,11 +40,20 @@
             author: `author${i}`,
             numPages: `numPages${i}`,
           };
-          axios.post(booksUrl, book);
+          axios
+            .post(booksUrl, book)
+            .then((response) => {
+              console.log(response);
+              console.log("success!");
+            })
+            .catch((error) => {
+              console.log(error);
+              console.log("failure!");
+            });
         }
       };
       const addbooksBtn = document.querySelector("#addBooks");
-      addbooksBtn.addEventListener("click", addBookObj());
+      addbooksBtn.addEventListener("click", addBookObj);
     </script>
   </body>
 </html>

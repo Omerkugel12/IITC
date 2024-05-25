@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="getAll">GET ALL BOOKS</button>
+    <form id="createBook">
+      <h3>Create Book:</h3>
+      <input type="text" name="Name" placeholder="Enter bookName" />
+      <input type="text" name="author" placeholder="Enter authorName" />
+      <input type="text" name="numPages" placeholder="Enter number of pages" />
+      <button>Create Book</button>
+    </form>
+    <form id="deleteBook">
+      <h3>Delete Book:</h3>
+      <input
+        type="text"
+        id="idToDeleteInput"
+        placeholder="Enter id to delete"
+      />
+      <button>DELETE BOOK</button>
+    </form>
+    <form id="updateBook">
+      <h3>Update book</h3>
+      <input
+        type="text"
+        id="idToUpdateInput"
+        placeholder="Enter id to update"
+      />
+      <input
+        type="text"
+        id="nameToUpdateInput"
+        placeholder="Enter name of book"
+      />
+      <input
+        type="text"
+        id="authorToUpdateInput"
+        placeholder="Enter name of author"
+      />
+      <input
+        type="text"
+        id="numPagestoUpdateInput"
+        placeholder="Enter number of pages"
+      />
+      <button>UPDATE BOOK</button>
+    </form>
+    <p id="state"></p>
+    <table>
+      <thead>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>AUTHOR</td>
+        <td>NUMBER OF PAGES</td>
+      </thead>
+    </table>
+    <script src="https://unpkg.com/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="ajax_crud_2.js"></script>
+  </body>
+</html>
